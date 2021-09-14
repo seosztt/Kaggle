@@ -99,9 +99,26 @@ def brief():
 
 def price_cor(feature):
     '''
-    feature와 집값 사이의 상관계수를 반환
+    feature와 집값 사이의 상관계수를 프린트하고 반환
     '''
+    print(round(float(pd.DataFrame(train.corr()['SalePrice']).loc[feature]),3))
     return round(float(pd.DataFrame(train.corr()['SalePrice']).loc[feature]),3)
+
+def onehot(df, columns_list):
+    '''
+    columns_list에 있는 df의 column에 대하여 onehot인코딩하여 df을 반환
+    '''
+    import pandas as pd
+    len_list=len(columns_list)
+    for i in range(len_list):
+        len_cat=len(df.groupby(columns_list[i]))
+        catrzed=pd.get_dummies(df[columns_list[i]])
+        cat_list=[]
+        for j in range(len_cat):
+            cat_list.append(df.groupby(columns_list[i]).count().index[j])
+        df[cat_list]=catrzed
+        df=df.drop([columns_list[i]], axis=1)
+    return df
 
 ### feature 분류
 feature_raw = []
