@@ -45,10 +45,10 @@ We will use Scikit-learn (maybe)
 - 18/sep/2021, sklearn의 OLS(Ordinary Least Squares) 모듈을 사용하여 기록경신 (0.13450)
 - 22/sep/2021, BO(Bayesian Optimization)과 GridSearchCV를 사용하여 Hyperparameter tuning을 시도하였으나 기록경신에는 실패.
 - 24/sep/2021, PCA(Principal component analysis)를 사용하여 차원 축소하여 OLS 시도.
-- 24/sep/2021, Ridge와 EN(ElasticNet), GBR(Gradient Boosting Regression), LGB(LightGBM)를 사용하여 시도. EN으로 기록 경신 (0.13433)
-- 24/sep/2021, VR(VotingRegressor)를 사용하여 RF, XGB, LGBM, Ridge, ENㄴ, GBR, LGB를 조합하여 시도했으나 기록경신에는 실패.
+- 24/sep/2021, Ridge와 EN(ElasticNet), GBR(Gradient Boosting Regression), LGB(LightGBM)를 사용하여 시도. EN으로 기록 경신 `Best Score:0.13433`
+- 24/sep/2021, VR(VotingRegressor)를 사용하여 RF, XGB, LGBM, Ridge, EN, GBR, LGB를 조합하여 시도했으나 기록경신에는 실패.
 - 25/sep/2021, scaling할 때와 PCA 모듈을 사용할 때 test data를 transform하는데 오류가 있음을 확인하고 전처리를 다시하여 submission파일 제출. 기록경신에는 실패.
-- 03/oct/2021,DNN(Deep Neural Network)를 사용하여 예측 시도.
+- 03/oct/2021, DNN(Deep Neural Network)를 사용하여 예측 시도.
 
 ## Evaluating
 - Evaluation standard : RMSLE
