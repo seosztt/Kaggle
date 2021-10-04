@@ -20,7 +20,7 @@
 - feature_map : 순서를 가진 데이터 (Ex. Quality : Excellent->Good->Fair->Poor)
   - 순서 혹은 가격과의 상관관계를 보고 0,1,2,3,4 등 정수값으로 매핑해 줄 예정
   - 그냥 one-hot을 하는게 성능이 더 좋을지? 에 대한 고민.
- 
+
 - feature_onehot : 데이터간의 순서/관계를 찾기 힘든 데이터 (ex. SaleType)
   - One-hot encoding을 할 예정
   - 이때 개수가 적은 값들의 경우 drop. (one-hot column에 1의 값이 아주 적은 경우)
@@ -42,8 +42,13 @@ We will use Scikit-learn (maybe)
 - XGBoost 
   - RandomForestRegressor와 같은 조건에서 돌려서 0.1373 기록
   - Hyperparameter tuning을 통해 좀 더 나은 결과를 얻을 수 있을거라고 생각함
-- LightGBM
-  - 시도해봐야함.
+- 18/sep/2021, sklearn의 OLS(Ordinary Least Squares) 모듈을 사용하여 기록경신 (0.13450)
+- 22/sep/2021, BO(Bayesian Optimization)과 GridSearchCV를 사용하여 Hyperparameter tuning을 시도하였으나 기록경신에는 실패.
+- 24/sep/2021, PCA(Principal component analysis)를 사용하여 차원 축소하여 OLS 시도.
+- 24/sep/2021, Ridge와 EN(ElasticNet), GBR(Gradient Boosting Regression), LGB(LightGBM)를 사용하여 시도. EN으로 기록 경신 (0.13433)
+- 24/sep/2021, VR(VotingRegressor)를 사용하여 RF, XGB, LGBM, Ridge, ENㄴ, GBR, LGB를 조합하여 시도했으나 기록경신에는 실패.
+- 25/sep/2021, scaling할 때와 PCA 모듈을 사용할 때 test data를 transform하는데 오류가 있음을 확인하고 전처리를 다시하여 submission파일 제출. 기록경신에는 실패.
+- 03/oct/2021,DNN(Deep Neural Network)를 사용하여 예측 시도.
 
 ## Evaluating
 - Evaluation standard : RMSLE
@@ -51,4 +56,8 @@ We will use Scikit-learn (maybe)
 
 ### Ensemble
 - XGBoost / LightGBM 등을 각각 K-fold validation을 통해 fit하고 예측값을 얻을 것임.
+
 - 그 후 각 예측값들을 합쳐서(ensemble) 더 좋은 예측값을 기대.
+
+  
+
