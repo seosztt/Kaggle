@@ -2,7 +2,10 @@
 
 ## Titanic
 - Random-Forest
-- result : 0.8112 (AUC)
+
+- result : DACON 0.8112 (AUC)
+
+  ​			 Kaggle 0.75358 (AUC)
 
 ## House price prediction
 - RandomForestRegressor
