@@ -49,6 +49,7 @@ We will use Scikit-learn (maybe)
 - 24/sep/2021, VR(VotingRegressor)를 사용하여 RF, XGB, LGBM, Ridge, EN, GBR, LGB를 조합하여 시도했으나 기록경신에는 실패.
 - 25/sep/2021, scaling할 때와 PCA 모듈을 사용할 때 test data를 transform하는데 오류가 있음을 확인하고 전처리를 다시하여 submission파일 제출. 기록경신에는 실패.
 - 03/oct/2021, DNN(Deep Neural Network)를 사용하여 예측 시도.
+- 06/oct/2021, ElasticNet을 하이퍼파라미터 튜닝하여 제출하였으나 기록 경신 실패.
 
 ## Evaluating
 - Evaluation standard : RMSLE

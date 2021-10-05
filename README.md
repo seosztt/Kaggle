@@ -1,11 +1,11 @@
 # Kaggle
 
 ## Titanic
-- Random-Forest
+- VotingClassifier Voted by RandomForestClassifier and LogisticRegression
 
 - result : DACON 0.8112 (AUC)
 
-  ​			 Kaggle 0.75358 (AUC)
+  ​			 Kaggle 0.7775 (AUC)
 
 ## House price prediction
 - RandomForestRegressor
